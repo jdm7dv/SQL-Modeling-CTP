@@ -1,0 +1,673 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
+  dslVersion="1.0.0.0"
+  Id="4a96d07c-cd30-4b20-8db2-403d8e80f7d1"
+  name="ModelingProject" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="1ce318e5-756f-4dca-a6c4-c4d59aec49c3"
+        name="Customer"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="0b0df65f-d792-4af6-9c88-d27dfcde1bb6"
+            name="FirstName"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="a4f48b76-0357-4b36-a73a-602d555e53b5"
+            name="LastName"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="ee4414b3-8643-4a9c-a441-998f118a4c33"
+            name="StreetAddress"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="f6bddd79-d975-4ef2-90a2-e5000e763e8b"
+            name="City"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="dfa32560-1c3c-46b1-817c-1d0c343227ff"
+            name="State"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="13e8d653-c46f-44c5-a850-fb7211e84921"
+            name="PostalCode"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="5ad1b70a-dfd1-41aa-8bec-a4b85002e91e"
+            name="Id"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="8d805982-6aa4-44d4-b17b-293412392230"
+            name="Email"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="163ae127-694f-42a8-bb49-f4f34e73cc62"
+        name="Product"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="daa35b3d-ed90-44c4-8352-0c59390da3f6"
+            name="Name"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="50f5b6c5-b0ca-4d09-b645-a21133f2e0ec"
+            name="Price"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="6ab5d3e5-bf71-492e-b320-3395f4e4ca60"
+            name="Id"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6ab4b7ad-ce86-435d-888c-417a415e7b81"
+        name="Order"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="dd6ace2c-6d99-4693-b459-ec95cc52f2a5"
+            isDerived="false"
+            sourceEndRoleName="CustomerId"
+            targetEndRoleName="Id"
+            isLeaf="false"
+            name="FK_Order_Customer"
+            isAbstract="false">
+            <classMoniker
+              Id="1ce318e5-756f-4dca-a6c4-c4d59aec49c3"
+              LastKnownName="Customer"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8fbec100-b3bf-4f30-9bdc-34f23b0d8537"
+                  name="CustomerId"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="43320c57-84ed-4b2c-a674-8c4024b44519"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="304b3554-85d9-4dc0-b8de-4be5249537e8"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f9cca134-4268-4a28-ac50-c25bb297ff99"
+                  name="Id"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="55e7e4bd-8b01-41f1-9ce4-15b3fb5c0444"
+            name="Date"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="09a763ba-4df1-425b-a8da-4ea6eddd4f69"
+            name="TotalAmount"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="c8880463-fa2a-4951-a647-9f23ad25112e"
+            name="Id"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="94fdede4-85a4-41eb-89a1-e0c23c59a322"
+            name="CustomerId"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="2321ecbe-003e-4cc9-9391-8f4440a47e83"
+        name="OrderItem"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="14c01933-d2d0-4221-aee3-ea6c10cac702"
+            isDerived="false"
+            sourceEndRoleName="OrderId"
+            targetEndRoleName="Id"
+            isLeaf="false"
+            name="FK_OrderItem_Order"
+            isAbstract="false">
+            <classMoniker
+              Id="6ab4b7ad-ce86-435d-888c-417a415e7b81"
+              LastKnownName="Order"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="71312504-0b6f-4298-8931-d346926ba2c7"
+                  name="OrderId"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="057e58dc-f3cb-4875-94da-46c6a66900cb"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="1dc67a17-ea5f-4835-a391-22559e196b75"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f2cd83bc-eb3c-4752-a9ea-07d8ee176d6f"
+                  name="Id"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="0bf0cba6-cfa1-4f12-885d-81e3f6e6e2a6"
+            isDerived="false"
+            sourceEndRoleName="ProductId"
+            targetEndRoleName="Id"
+            isLeaf="false"
+            name="FK_OrderItem_Product"
+            isAbstract="false">
+            <classMoniker
+              Id="163ae127-694f-42a8-bb49-f4f34e73cc62"
+              LastKnownName="Product"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3429d95f-e05e-4f07-8dfd-abd9474862d0"
+                  name="ProductId"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="e2e2b432-3127-4128-9b49-0526e0f70299"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="d9576df9-1437-433c-b705-5ee328c77262"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e34407dc-2e7b-47fe-ace0-652780b9d4fe"
+                  name="Id"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="f40bc034-3954-4d1e-ba80-78995941b425"
+            name="Id"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="f3a08803-c02c-4ab1-a1a0-f11796628952"
+            name="OrderId"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="78547601-b1f1-4fa2-b600-25870c3bc7f0"
+            name="ProductId"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <subsystem
+        Id="33e6d9d9-9609-49a5-a305-bbda9d01c6ee"
+        name="IBuySpy"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="f454a498-7abc-4618-aeee-214e5711be6b"
+        name="Create Account"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="c87fb7ba-55d2-4c1e-afa8-20f4dc6fde12"
+            handle="%vs2010beta2\DefaultCollection#4b65deb5-ca98-4c6b-b209-9337b6c1a159$1$2"
+            tag="Work Item Reference" />
+        </referencesInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="33e6d9d9-9609-49a5-a305-bbda9d01c6ee"
+            LastKnownName="IBuySpy"
+            LastKnownLocation="ModelingProject.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="09313976-2a6a-4eb5-b69b-b776dc81f770"
+        name="Customer"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="061913bd-ebfe-4d3a-ae51-fd5a4717abb1">
+            <useCaseMoniker
+              Id="f454a498-7abc-4618-aeee-214e5711be6b"
+              LastKnownName="Create Account"
+              LastKnownLocation="ModelingProject.uml" />
+          </dependency>
+        </suppliersInternal>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="ae44b0d6-c4c4-49b9-8754-79a7db335fbe"
+        name="Administrator"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="5c7643e7-3fb4-4f60-9c68-c16ca4946339"
+            isDerived="false"
+            sourceEndRoleName="Employee"
+            targetEndRoleName="View Contact Details"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="407a33c6-0db8-49e2-812d-6c6c6226d446"
+              LastKnownName="View Contact Details"
+              LastKnownLocation="ModelingProject.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1b0f81db-2d2d-461d-b3d8-fb021d00e032"
+                  name="Employee"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e29919a3-496c-4515-b550-8dd21b8da6ca"
+                  name="View Contact Details"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="b74f796d-46cb-47bd-b39a-e0a9330f71a6"
+        name="Add Item to Cart"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="d874109b-ee0d-4f68-9561-4ac5425eefd5"
+            handle="%vs2010beta2\DefaultCollection#4b65deb5-ca98-4c6b-b209-9337b6c1a159$2"
+            tag="Work Item Reference" />
+        </referencesInternal>
+        <suppliersInternal>
+          <dependency
+            Id="5246032b-e9ff-4818-b5b7-b3b135ecdb5e">
+            <useCaseMoniker
+              Id="5805421d-9dd1-4629-9499-5e08a0b39bbe"
+              LastKnownName="Log In"
+              LastKnownLocation="ModelingProject.uml" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="33e6d9d9-9609-49a5-a305-bbda9d01c6ee"
+            LastKnownName="IBuySpy"
+            LastKnownLocation="ModelingProject.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="5805421d-9dd1-4629-9499-5e08a0b39bbe"
+        name="Log In"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="51b4114e-15e6-4866-90e2-66a545451c43">
+            <useCaseMoniker
+              Id="f454a498-7abc-4618-aeee-214e5711be6b"
+              LastKnownName="Create Account"
+              LastKnownLocation="ModelingProject.uml" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="33e6d9d9-9609-49a5-a305-bbda9d01c6ee"
+            LastKnownName="IBuySpy"
+            LastKnownLocation="ModelingProject.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="3aaf7c2a-5a67-4e5a-954d-62881dd081da"
+        name="Check Out"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="14f07ab4-cb46-4d25-8f71-2789eda6a0a8"
+            handle="%vs2010beta2\DefaultCollection#4b65deb5-ca98-4c6b-b209-9337b6c1a159$6"
+            tag="Work Item Reference" />
+        </referencesInternal>
+        <suppliersInternal>
+          <dependency
+            Id="528607b9-c8b7-4a1b-95a1-f776698129c4">
+            <useCaseMoniker
+              Id="b74f796d-46cb-47bd-b39a-e0a9330f71a6"
+              LastKnownName="Add Item to Cart"
+              LastKnownLocation="ModelingProject.uml" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="33e6d9d9-9609-49a5-a305-bbda9d01c6ee"
+            LastKnownName="IBuySpy"
+            LastKnownLocation="ModelingProject.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="407a33c6-0db8-49e2-812d-6c6c6226d446"
+        name="View Contact Details"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="16d259ca-1a7b-46ea-8659-0ef18870e01b"
+            handle="%vs2010beta2\DefaultCollection#4b65deb5-ca98-4c6b-b209-9337b6c1a159$11"
+            tag="Work Item Reference" />
+        </referencesInternal>
+        <suppliersInternal>
+          <dependency
+            Id="015ad368-7bc1-4bd0-b53d-3c939a7bb1af">
+            <useCaseMoniker
+              Id="f454a498-7abc-4618-aeee-214e5711be6b"
+              LastKnownName="Create Account"
+              LastKnownLocation="ModelingProject.uml" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="33e6d9d9-9609-49a5-a305-bbda9d01c6ee"
+            LastKnownName="IBuySpy"
+            LastKnownLocation="ModelingProject.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="182c6e48-8185-42de-ae7c-bc1ead5f4fc3"
+        name="Reset Password"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="7649f4b4-1630-4565-9145-a21d33d57a7d"
+            handle="%vs2010beta2\DefaultCollection#4b65deb5-ca98-4c6b-b209-9337b6c1a159$17"
+            tag="Work Item Reference" />
+        </referencesInternal>
+        <suppliersInternal>
+          <dependency
+            Id="857681f6-30e6-4e8c-a3b3-85a65c3e3a1e">
+            <useCaseMoniker
+              Id="f454a498-7abc-4618-aeee-214e5711be6b"
+              LastKnownName="Create Account"
+              LastKnownLocation="ModelingProject.uml" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker
+            Id="33e6d9d9-9609-49a5-a305-bbda9d01c6ee"
+            LastKnownName="IBuySpy"
+            LastKnownLocation="ModelingProject.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="aa6000aa-50e5-4063-b00d-6ea8024c29ac"
+        name="UseCase1"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

@@ -1,0 +1,61 @@
+﻿<#@ template debug="true" hostspecific="true" language="C#" #>
+<#@ output extension=".sql" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="Microsoft.VisualStudio.Uml.Interfaces.dll" #>
+<#@ assembly name="Microsoft.VisualStudio.ArchitectureTools.Extensibility.dll" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="Microsoft.VisualStudio.Uml.Classes" #>
+<#@ import namespace="Microsoft.VisualStudio.ArchitectureTools.Extensibility" #>
+<#
+	string projectPath = this.Host.ResolvePath(@"..\ModelingProject\IBuySpyModelingProject.modelproj");
+	IModelingProjectReader project = ModelingProject.LoadReadOnly(projectPath);	
+	foreach (IType t in project.Store.Root.OwnedTypes)
+	{
+		IClass c = t as IClass;
+		if (c == null) continue;
+#>
+create table <#= GetSchema(project.Store.Root) #>.<#= c.Name #>
+(
+<#
+		bool poevirgula=false;
+		this.PushIndent("\t");
+		foreach (IProperty p in c.OwnedAttributes)
+		{
+			if (poevirgula)
+			    this.WriteLine(",");
+			IStereotypeInstance column = p.AppliedStereotypes.Where(s => s.Name == "Column").First();
+			this.Write(p.Name + " " + GetDataType(column) + GetNull(column) + GetIdentity(column));
+			poevirgula=true;
+		}
+		this.PopIndent();
+#>
+);
+<#
+	}
+#>
+<#+
+	private string GetSchema(IPackage package)
+	{
+		IStereotypeInstance schema = package.AppliedStereotypes.Where(s => s.Name == "Schema").First();
+		IStereotypePropertyInstance schemaName = schema.PropertyInstances.Where(p => p.Name == "Name").First();
+		return schemaName.Value;
+	}
+
+	private string GetDataType(IStereotypeInstance column)
+	{
+		IStereotypePropertyInstance dataType = column.PropertyInstances.Where(p => p.Name == "DataType").First();
+		return dataType.Value;
+	}
+
+	private string GetNull(IStereotypeInstance column)
+	{
+		IStereotypePropertyInstance allowNulls = column.PropertyInstances.Where(p => p.Name == "AllowNulls").First();
+		return bool.Parse(allowNulls.Value) == true ? string.Empty : " not null";
+	}
+
+	private string GetIdentity(IStereotypeInstance column)
+	{
+		IStereotypePropertyInstance isIdentity = column.PropertyInstances.Where(p => p.Name == "IsIdentity").First();
+		return bool.Parse(isIdentity.Value) == true ? " identity" : string.Empty;
+	}
+#>

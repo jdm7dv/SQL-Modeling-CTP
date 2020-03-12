@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="dca946c6-bc5b-46a7-ade8-daeccfe73e86" name="Order Entry" linkedPackageId="2d90e75d-3c91-4c52-ac03-b564f58c7bb9" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <appliedStereotypesInternal>
+    <stereotypeInstance Id="e165afb2-1396-4d13-ab9c-5e2464a18bf9" name="Schema" profile="Sql2008DatabaseProfile">
+      <elementDefinition Id="a54749a2-91ac-4518-9112-9048c0fdfc22" />
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances Id="61f32830-7fc1-4f58-95cf-5b77c4b36585">
+          <propertyInstance Id="99a13d5d-eb2b-491c-9c9e-7b6d388a9a9e" name="Name" value="dbo">
+            <elementDefinition Id="0f7ac8f5-cbde-4b5c-aed7-9f19453ab6fb" />
+          </propertyInstance>
+          <elementDefinition Id="425c9eeb-6770-497b-bb2d-10ba08810e85" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+  </appliedStereotypesInternal>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="6d99bb77-323a-45b8-a5c8-5e87cc9b94ec" name="IBuySpy" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="33e6d9d9-9609-49a5-a305-bbda9d01c6ee" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="701217b2-0e21-4c9e-b681-0d7d5d4f2706" name="Create Account" isAbstract="false" isLeaf="false">
+        <referencesInternal>
+          <reference Id="90cb6714-2143-4349-908e-525129cca89a" handle="%vs2010beta2\DefaultCollection#4b65deb5-ca98-4c6b-b209-9337b6c1a159$1$2" tag="Work Item Reference">
+            <elementDefinition Id="c87fb7ba-55d2-4c1e-afa8-20f4dc6fde12" />
+          </reference>
+        </referencesInternal>
+        <elementDefinition Id="f454a498-7abc-4618-aeee-214e5711be6b" />
+        <subjects>
+          <subsystemMoniker Id="6d99bb77-323a-45b8-a5c8-5e87cc9b94ec" LastKnownName="IBuySpy" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <useCaseModelRootHasTypes>
+      <actor Id="68cbc4ad-7b1a-404b-9818-aafe38595eb8" name="Customer" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="09313976-2a6a-4eb5-b69b-b776dc81f770" />
+        <suppliersInternal>
+          <dependency Id="a64be487-2969-46c9-ae8b-ee9702d94a2d">
+            <useCaseMoniker Id="701217b2-0e21-4c9e-b681-0d7d5d4f2706" LastKnownName="Create Account" />
+            <elementDefinition Id="061913bd-ebfe-4d3a-ae51-fd5a4717abb1" />
+          </dependency>
+        </suppliersInternal>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="9292e79a-3bdd-47f2-81d6-2061c5bfa583" name="Administrator" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ae44b0d6-c4c4-49b9-8754-79a7db335fbe" />
+        <targetEnds>
+          <association Id="9f781094-b2f5-4288-aa08-071eb5eb88f7" isDerived="false" sourceEndRoleName="Employee" targetEndRoleName="View Contact Details" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="0e8e7b01-504c-41c2-9012-260b0fe7e64c" LastKnownName="View Contact Details" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e7970d03-e561-4f96-80cf-4fdd8369d9a9" name="Employee" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="1b0f81db-2d2d-461d-b3d8-fb021d00e032" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d41f29a4-07fa-428c-910c-a79db92a6939" name="View Contact Details" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="e29919a3-496c-4515-b550-8dd21b8da6ca" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="5c7643e7-3fb4-4f60-9c68-c16ca4946339" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <packageHasNamedElement>
+      <useCase Id="a69bb897-4578-472f-9347-4db283c3a38e" name="Add Item to Cart" isAbstract="false" isLeaf="false">
+        <referencesInternal>
+          <reference Id="433608c8-7859-44f1-9787-e5d3e44b3f52" handle="%vs2010beta2\DefaultCollection#4b65deb5-ca98-4c6b-b209-9337b6c1a159$2" tag="Work Item Reference">
+            <elementDefinition Id="d874109b-ee0d-4f68-9561-4ac5425eefd5" />
+          </reference>
+        </referencesInternal>
+        <elementDefinition Id="b74f796d-46cb-47bd-b39a-e0a9330f71a6" />
+        <suppliersInternal>
+          <dependency Id="7ceb7023-a875-479a-9f4a-fc74bb66c97e">
+            <useCaseMoniker Id="16555dd6-5b3a-4899-a197-91f3756e4006" LastKnownName="Log In" />
+            <elementDefinition Id="5246032b-e9ff-4818-b5b7-b3b135ecdb5e" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker Id="6d99bb77-323a-45b8-a5c8-5e87cc9b94ec" LastKnownName="IBuySpy" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="16555dd6-5b3a-4899-a197-91f3756e4006" name="Log In" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5805421d-9dd1-4629-9499-5e08a0b39bbe" />
+        <suppliersInternal>
+          <dependency Id="e359fec3-d2f3-47fb-9952-c9f538a2bbea">
+            <useCaseMoniker Id="701217b2-0e21-4c9e-b681-0d7d5d4f2706" LastKnownName="Create Account" />
+            <elementDefinition Id="51b4114e-15e6-4866-90e2-66a545451c43" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker Id="6d99bb77-323a-45b8-a5c8-5e87cc9b94ec" LastKnownName="IBuySpy" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="f05609bb-2d6e-4a6e-9989-146a2b6bceae" name="Check Out" isAbstract="false" isLeaf="false">
+        <referencesInternal>
+          <reference Id="2a3a4b6d-5bb3-4e8a-8734-352b6002d617" handle="%vs2010beta2\DefaultCollection#4b65deb5-ca98-4c6b-b209-9337b6c1a159$6" tag="Work Item Reference">
+            <elementDefinition Id="14f07ab4-cb46-4d25-8f71-2789eda6a0a8" />
+          </reference>
+        </referencesInternal>
+        <elementDefinition Id="3aaf7c2a-5a67-4e5a-954d-62881dd081da" />
+        <suppliersInternal>
+          <dependency Id="c999b0f5-dd85-4fbf-a465-fedd0efbd005">
+            <useCaseMoniker Id="a69bb897-4578-472f-9347-4db283c3a38e" LastKnownName="Add Item to Cart" />
+            <elementDefinition Id="528607b9-c8b7-4a1b-95a1-f776698129c4" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker Id="6d99bb77-323a-45b8-a5c8-5e87cc9b94ec" LastKnownName="IBuySpy" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="0e8e7b01-504c-41c2-9012-260b0fe7e64c" name="View Contact Details" isAbstract="false" isLeaf="false">
+        <referencesInternal>
+          <reference Id="c46ca295-728d-41ce-84ad-5132505d5305" handle="%vs2010beta2\DefaultCollection#4b65deb5-ca98-4c6b-b209-9337b6c1a159$11" tag="Work Item Reference">
+            <elementDefinition Id="16d259ca-1a7b-46ea-8659-0ef18870e01b" />
+          </reference>
+        </referencesInternal>
+        <elementDefinition Id="407a33c6-0db8-49e2-812d-6c6c6226d446" />
+        <suppliersInternal>
+          <dependency Id="03cd31b7-a6d5-400c-b06f-1bf628e98dca">
+            <useCaseMoniker Id="701217b2-0e21-4c9e-b681-0d7d5d4f2706" LastKnownName="Create Account" />
+            <elementDefinition Id="015ad368-7bc1-4bd0-b53d-3c939a7bb1af" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker Id="6d99bb77-323a-45b8-a5c8-5e87cc9b94ec" LastKnownName="IBuySpy" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase Id="60810f46-212e-4c48-823f-7ddcb3926dea" name="Reset Password" isAbstract="false" isLeaf="false">
+        <referencesInternal>
+          <reference Id="5319078f-4134-401d-afdf-ea3026ede94f" handle="%vs2010beta2\DefaultCollection#4b65deb5-ca98-4c6b-b209-9337b6c1a159$17" tag="Work Item Reference">
+            <elementDefinition Id="7649f4b4-1630-4565-9145-a21d33d57a7d" />
+          </reference>
+        </referencesInternal>
+        <elementDefinition Id="182c6e48-8185-42de-ae7c-bc1ead5f4fc3" />
+        <suppliersInternal>
+          <dependency Id="47d0b097-af79-4b02-89af-9c2d54b674ef">
+            <useCaseMoniker Id="701217b2-0e21-4c9e-b681-0d7d5d4f2706" LastKnownName="Create Account" />
+            <elementDefinition Id="857681f6-30e6-4e8c-a3b3-85a65c3e3a1e" />
+          </dependency>
+        </suppliersInternal>
+        <subjects>
+          <subsystemMoniker Id="6d99bb77-323a-45b8-a5c8-5e87cc9b94ec" LastKnownName="IBuySpy" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="2d90e75d-3c91-4c52-ac03-b564f58c7bb9" name="ModelingProject">
+    <elementDefinition Id="4a96d07c-cd30-4b20-8db2-403d8e80f7d1" />
+    <profileInstances>
+      <packageHasProfileInstances Id="e04f8079-2f8f-4cd0-9fd2-de4a176419c3">
+        <profileInstance Id="89f798b9-691b-4ad0-a7d9-ab9308b5bc80" name="Sql2008DatabaseProfile">
+          <elementDefinition Id="53485ff6-cf71-4e9e-8ce3-4f547935b559" />
+        </profileInstance>
+        <elementDefinition Id="bdef60c4-93eb-492e-a329-40afed62c768" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>
